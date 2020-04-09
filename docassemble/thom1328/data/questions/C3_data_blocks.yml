@@ -1,0 +1,35 @@
+---
+variable name: SLTperson_info2
+use objects: True
+data:
+  - First Name: Emma 
+    Last name: Thomas
+    Age: 21
+    Hobbies: Reading and running
+    Do you like pets?: True
+  - First Name: Bradley 
+    Last name: Thomas
+    Age: 17
+    Hobbies: Watching TV and eating
+    Do you like pets?: True
+  - First Name: Jesse 
+    Last name: Thomas
+    Age: 12
+    Hobbies: Playing outside
+    Do you like pets?: True
+  - First Name: Jesse
+    Last name: Reid
+    Age: 18
+    Hobbies: Driving and gym
+    Do you like pets?: True
+  - First Name: Sharon
+    Last name: Crain
+    Age: 46
+    Hobbies: Watching TV and cooking
+    Do you like pets?: True
+  - First Name: Damian
+    Last name: Thomas
+    Age: 45
+    Hobbies: Eating and working
+    Do you like pets?: True
+---

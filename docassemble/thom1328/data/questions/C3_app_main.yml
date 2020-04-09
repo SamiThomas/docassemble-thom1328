@@ -1,0 +1,91 @@
+---
+include:
+  - C3_data_blocks.yml
+  - C3_code.yml
+---
+mandatory: True
+question: Family Information Checker
+subquestion: |
+  This is the information collected for each family member.
+ 
+  ${ SLTcolumn_header }
+  ${ SLTdashes }
+  %for SLTitem in SLTtable_rows:
+  ${ SLTitem }
+  %endfor
+ 
+  You must confirm whether each piece of information is correct.
+buttons:
+  - Continue: continue
+  - Exit: exit
+  - Restart: restart
+---
+variable name: SLTquestions
+use objects: True
+data:
+  - First Name: Emma 
+    Last name: Thomas
+    Age: 21
+    Hobbies: Reading and running
+    Do you like pets?: True
+  - First Name: Bradley 
+    Last name: Thomas
+    Age: 17
+    Hobbies: Watching TV and eating
+    Do you like pets?: True
+  - First Name: Jesse 
+    Last name: Thomas
+    Age: 12
+    Hobbies: Playing outside
+    Do you like pets?: True
+  - First Name: Jesse
+    Last name: Reid
+    Age: 18
+    Hobbies: Driving and gym
+    Do you like pets?: True
+  - First Name: Sharon
+    Last name: Crain
+    Age: 46
+    Hobbies: Watching TV and cooking
+    Do you like pets?: True
+  - First Name: Damian
+    Last name: Thomas
+    Age: 45
+    Hobbies: Eating and working
+    Do you like pets?: True
+---
+mandatory: True
+question: PDF File 
+subquestion: |
+  #### Here is the result of your selections
+  
+  ${ SLTquestion_table }
+  
+attachment:
+  docx template file: C3_Jinja.docx
+  file name: C3 Assessment
+  valid formats:
+    - pdf
+buttons: 
+  - Exit: exit
+    url: http://www.flinders.edu.au
+  - Restart: restart
+---
+table: SLTquestion_table
+rows: SLTquestions
+columns:
+  - Question: |
+      row_item['SLTquestion']
+  - Selected answers: |
+      row_item['SLTanswers'].true_values()
+  - No. Selected answers: |
+      len(row_item['SLTanswers'].true_values())
+---
+mandatory: True
+question: |
+  ${ SLTquestions[i]['SLTquestion'] }
+fields:
+  - no label: SLTquestions[i]['SLTanswers']
+    datatype: checkboxes
+    code: SLTquestions[i]['SLTchoices']
+---

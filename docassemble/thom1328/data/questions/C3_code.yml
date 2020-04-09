@@ -1,0 +1,24 @@
+---
+code: |
+  SLTcolumn_header = ""
+  
+  for SLTitem in SLTperson_info2[0]:
+    SLTcolumn_header += SLTitem + '|'
+    
+  SLTcolumn_header = SLTcolumn_header[:-1]  
+---
+code: |
+  SLTdashes = '---'
+  for i in range (len(SLTperson_info2[0]) - 1):
+    SLTdashes += '|---'
+---
+code: |
+  SLTtable_rows = []
+  
+  for SLTitem in SLTperson_info2:
+    MDrow = ""
+    for SLTkey in SLTitem:
+      MDrow += str(SLTitem[SLTkey]) + '|'
+    MDrow = MDrow[:-1]
+    SLTtable_rows.append(MDrow)
+---

@@ -45,7 +45,7 @@ def find_package_data(where='.', package='', exclude=standard_exclude, exclude_d
 setup(name='docassemble.thom1328',
       version='0.0.1',
       description=('A docassemble extension.'),
-      long_description='# docassemble.thom1328\n\nA docassemble extension.\n\n## Author\n\nSamantha Thomas, thom1328@flinders.edu.au\n\n',
+      long_description='# docassemble.thom1328\r\n\r\nA docassemble extension.\r\n\r\n## Author\r\n\r\nSamantha Thomas, thom1328@flinders.edu.au\r\n\r\n',
       long_description_content_type='text/markdown',
       author='Samantha Thomas',
       author_email='thom1328@flinders.edu.au',
